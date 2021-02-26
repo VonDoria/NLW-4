@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { ChallengesContext } from '../contexts/ChallengeContext';
+import { FiCheckCircle } from "react-icons/fi";
 import { CountdownContext } from '../contexts/CountdownContext';
 import styles from '../styles/components/Countdown.module.css';
 
@@ -26,9 +26,9 @@ export function Countdown()
                     <span>{secondsRight}</span>
                 </div>
             </div>
-            { hasFinished ? (<button disabled className={styles.countdownButton}>Ciclo encerrado</button>) : (
+            { hasFinished ? (<button disabled className={styles.countdownButton}>Ciclo encerrado <FiCheckCircle /></button>) : (
                 <>
-                    { isActive ? <button type="button" className={`${styles.countdownButton} ${styles.countdownButtonActive}`} onClick={resetCountdown} >Abandonar ciclo</button> : <button type="button" className={styles.countdownButton} onClick={startCountdown} >Iniciar um novo ciclo</button>}
+                    { isActive ? <button type="button" className={`${styles.countdownButton} ${styles.countdownButtonActive}`} onClick={resetCountdown} >Abandonar ciclo<img src="/icons/close.svg" alt="X"/></button> : <button type="button" className={styles.countdownButton} onClick={startCountdown} >Iniciar um novo ciclo</button>}
                 </>
             )}
             
