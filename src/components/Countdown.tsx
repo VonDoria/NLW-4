@@ -4,8 +4,6 @@ import { CountdownContext } from '../contexts/CountdownContext';
 import styles from '../styles/components/Countdown.module.css';
 
 
-let countdownTimeout: NodeJS.Timeout;
-
 export function Countdown()
 {
     const { minutes, seconds, hasFinished, isActive, startCountdown, resetCountdown } = useContext(CountdownContext);
